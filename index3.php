@@ -13,7 +13,17 @@ foreach($fruits as $key => $element){
 }*/
 
 
+$count = 0;
 
+
+for($i = 1 ; $i <= 10 ; $i++){
+
+
+    $count+=$i;
+
+}
+
+echo "La suma de los numeros es: $count";
 
 
 
