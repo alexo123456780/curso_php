@@ -57,7 +57,7 @@ foreach($incrementPrice as $key => $element){
 
 
 
-//Task 3 array_filter()
+/*Task 3 array_filter()
 
 $products = 
 [
@@ -78,28 +78,25 @@ foreach($stokUnits as $product){
 
 echo "Product Name: ".$product["name"].", "."Stok:  ".$product["stok"]."<br><br>";
 
-};
+};*/
+
+
+//Task 4
+
+
+$products = 
+[
+    ["name" => "laptop" , "price" => 10500 , "stok" => 3 ],
+    ["name" => "smartphone", "price" => 5600, "stok" => 70],
+    ["name" => "console", "price" => 10800, "stok" => 30]
+];
 
 
 
+$calculateStock = array_reduce($products,fn($a,$b) => $a + $b["stok"],0);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+echo "La suma del stok es de: ".$calculateStock." articulos";
 
 
 ?>
