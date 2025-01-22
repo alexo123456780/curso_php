@@ -1,80 +1,198 @@
-Practicas de PHP
+PHP INTRODUCCION (DIA 1-5)
 
--Ejercicios
--Practicas
--Proyectos
+PHP Fundamentals: Días 1 a 5
+Introducción
+Este documento reúne todo lo aprendido en PHP desde lo básico hasta arrays multidimensionales y sus operaciones avanzadas. Incluye explicaciones, ejemplos prácticos y ejercicios. Es ideal para usarlo como referencia rápida o guía de estudio.
+
+Día 1: Introducción a PHP
+Configuración del entorno
+Herramientas necesarias:
+Servidor local: XAMPP, WAMP o similares.
+Editor de texto: Visual Studio Code o cualquier IDE de tu preferencia.
+Primer script:
 
 
-Parte 1: Funciones avanzadas de cadenas
-1. explode() y implode()
-explode(): Divide una cadena en un array basado en un delimitador.
-implode(): Combina los elementos de un array en una cadena.
+<?php
+echo "¡Hola, mundo!";
+?>
+Conceptos básicos
+Variables y constantes:
+
+Variables: Se definen con $.
 Ejemplo:
 
-php
-Copiar
-Editar
-$cadena = "PHP,JavaScript,Python";
-$array = explode(",", $cadena); // Divide en un array
-print_r($array);
 
-$cadenaNueva = implode(" | ", $array); // Une el array en una cadena
-echo $cadenaNueva;
-👉 Tarea: Toma una cadena con 5 palabras separadas por comas, conviértela en un array, invierte el orden y luego conviértelo de nuevo a cadena.
-
-2. str_replace() y str_ireplace()
-str_replace(): Reemplaza texto dentro de una cadena (sensible a mayúsculas).
-str_ireplace(): Igual que str_replace(), pero insensible a mayúsculas.
+$nombre = "Alejandro";
+$edad = 30;
+Constantes: No cambian su valor.
 Ejemplo:
 
-php
-Copiar
-Editar
+
+
+define("PI", 3.1416);
+const NOMBRE_APP = "MiApp";
+Tipos de datos en PHP:
+
+Escalares: int, float, string, bool.
+Compuestos: array, object.
+Especiales: null.
+Operadores en PHP:
+
+Aritméticos: +, -, *, /, %.
+Comparación: ==, !=, >, <, <=, >=.
+Lógicos: &&, ||, !.
+Asignación: =, +=, -=, *=, /=, %=.
+Ternario: $resultado = $condicion ? "Sí" : "No";
+Día 2: Estructuras de Control
+Condicionales
+if, else, elseif:
+
+
+$edad = 20;
+if ($edad < 18) {
+    echo "Eres menor de edad.";
+} elseif ($edad <= 25) {
+    echo "Eres joven.";
+} else {
+    echo "Eres adulto.";
+}
+switch:
+
+
+$dia = "lunes";
+switch ($dia) {
+    case "lunes":
+        echo "Inicio de semana.";
+        break;
+    case "viernes":
+        echo "Fin de semana.";
+        break;
+    default:
+        echo "Día regular.";
+}
+Bucles
+for: Repite un bloque de código un número específico de veces.
+
+
+for ($i = 1; $i <= 5; $i++) {
+    echo "Número: $i<br>";
+}
+while: Ejecuta un bloque mientras la condición sea verdadera.
+
+
+$i = 1;
+while ($i <= 5) {
+    echo "Número: $i<br>";
+    $i++;
+}
+do-while: Similar a while, pero siempre ejecuta el bloque al menos una vez.
+
+
+$i = 1;
+do {
+    echo "Número: $i<br>";
+    $i++;
+} while ($i <= 5);
+foreach: Itera sobre arrays.
+
+
+$lenguajes = ["PHP", "JavaScript", "Python"];
+foreach ($lenguajes as $lenguaje) {
+    echo "Lenguaje: $lenguaje<br>";
+}
+
+
+Día 3: Funciones
+Definición y uso
+Funciones simples:
+
+
+function saludar($nombre) {
+    return "Hola, $nombre!";
+}
+echo saludar("Alejandro");
+Funciones dinámicas:
+
+
+function sumar($a, $b) {
+    return $a + $b;
+}
+$operacion = "sumar";
+echo $operacion(5, 3);
+Funciones anónimas:
+
+
+$multiplicar = function($a, $b) {
+    return $a * $b;
+};
+echo $multiplicar(4, 5);
+Funciones flecha:
+Introducidas en PHP 7.4, son una forma más corta de escribir funciones anónimas.
+
+
+$restar = fn($a, $b) => $a - $b;
+echo $restar(10, 5);
+Día 4: Manipulación de cadenas y arrays
+Strings
+Funciones clave:
+strlen(): Devuelve la longitud de una cadena.
+strtolower(), strtoupper(): Convierte a minúsculas o mayúsculas.
+substr(): Extrae una parte de la cadena.
+str_replace(): Reemplaza un texto en una cadena.
+
 $texto = "Hola, mundo";
-$nuevoTexto = str_replace("mundo", "PHP", $texto);
-echo $nuevoTexto; // Resultado: Hola, PHP
-👉 Tarea: Reemplaza todas las vocales en una cadena por asteriscos (*) usando str_replace().
+echo str_replace("mundo", "PHP", $texto); // Hola, PHP
+Arrays
+Tipos de arrays:
 
-3. strpos() y strrpos()
-strpos(): Encuentra la posición de la primera aparición de una subcadena.
-strrpos(): Encuentra la posición de la última aparición.
-Ejemplo:
+Indexados:
 
-php
-Copiar
-Editar
-$cadena = "Bienvenido a PHP, el mejor lenguaje de programación: PHP.";
-echo strpos($cadena, "PHP");  // Resultado: 12
-echo strrpos($cadena, "PHP"); // Resultado: 50
-👉 Tarea: Verifica si una palabra específica está presente en una cadena y muestra su posición (si existe).
+$frutas = ["Manzana", "Pera", "Uva"];
+Asociativos:
 
-Parte 2: Funciones adicionales para arrays
-1. array_keys() y array_values()
-array_keys(): Obtiene todas las claves de un array.
-array_values(): Obtiene todos los valores de un array.
-Ejemplo:
+$usuario = ["nombre" => "Alejandro", "edad" => 30];
+Multidimensionales:
 
-php
-Copiar
-Editar
-$datos = ["nombre" => "Alejandro", "edad" => 30, "ocupacion" => "Desarrollador"];
-$claves = array_keys($datos);
-$valores = array_values($datos);
-print_r($claves);
-print_r($valores);
-👉 Tarea: Dado un array asociativo con tres elementos, muestra solo sus claves y luego solo sus valores.
+$productos = [
+    ["nombre" => "Laptop", "precio" => 1500],
+    ["nombre" => "Smartphone", "precio" => 800]
+];
+Funciones clave:
 
-2. array_unique()
-Elimina elementos duplicados en un array.
-Ejemplo:
+array_map(): Aplica una función a cada elemento.
+array_filter(): Filtra elementos de acuerdo con una condición.
+array_reduce(): Reduce el array a un solo valor.
+Día 5: Arrays Multidimensionales
+Definición y manipulación
+Acceso a datos:
 
-php
-Copiar
-Editar
-$numeros = [1, 2, 2, 3, 4, 4, 5];
-$unicos = array_unique($numeros);
-print_r($unicos); // Resultado: [1, 2, 3, 4, 5]
-👉 Tarea: Dado un array con números duplicados, elimina los duplicados y muestra el resultado.
+
+$productos[0]["nombre"]; // Laptop
+Operaciones avanzadas:
+
+Incremento de precios:
+
+
+$productos = array_map(function($producto) {
+    $producto["precio"] *= 1.1;
+    return $producto;
+}, $productos);
+Filtrar por stock:
+
+
+$stockAlto = array_filter($productos, fn($p) => $p["stock"] > 20);
+Calcular suma total de stock:
+
+
+$totalStock = array_reduce($productos, fn($total, $p) => $total + $p["stock"], 0);
+
+
+
+
+
+
+
+
 
 
 
