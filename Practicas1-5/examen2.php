@@ -2,7 +2,7 @@
 
 //Manipulacion de cadenas
 
-//Task 1
+/*Task 1
 
 $cadena = "Aprender php es divertido y practico";
 
@@ -32,9 +32,24 @@ function extraerCadena($cadena){
 };
 
 
-$opcion = "CONVERTIR";
+$opcion = 'remplazar';
 
 $opcionValidada = strtolower($opcion);
+
+try{
+
+    if(is_numeric($opcionValidada)){
+
+        throw new Exception("Solo se permiten texto, no valores numericos");
+    }
+
+
+}catch(Exception $e){
+
+    echo "ERROR:  ".$e -> getMessage();
+    return;
+}
+
 
 switch($opcionValidada){
 
@@ -53,18 +68,7 @@ switch($opcionValidada){
     default:
     echo "Opcion no valida";
     break;
-}
-
-
-
-
-
-
-
-
-
-
-
+}*/
 
 
 
