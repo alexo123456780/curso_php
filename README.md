@@ -140,6 +140,21 @@ strtolower(), strtoupper(): Convierte a minúsculas o mayúsculas.
 substr(): Extrae una parte de la cadena.
 str_replace(): Reemplaza un texto en una cadena.
 
+
+Validaciones:
+
+para numeros se usa : is_numeric
+
+Para validar si una variable está vacía, se puede usar la función empty($variable)
+
+Para validar si una variable está vacía, se puede usar la función empty($variable). 
+
+Para validar si una variable es NULL, se puede usar el operador de identidad $texto === NULL. 
+
+Para validar si una variable no está declarada, se puede usar !isset($texto). 
+
+
+
 $texto = "Hola, mundo";
 echo str_replace("mundo", "PHP", $texto); // Hola, PHP
 Arrays
