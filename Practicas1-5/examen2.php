@@ -71,6 +71,43 @@ switch($opcionValidada){
 }*/
 
 
+//Task 2
+
+$cadena2 = "Alejandro Magana";
+
+function contarA($cadena2){
+
+    $contador = 0;
+
+    $nuevaCadena = strtolower($cadena2);
+
+    for($i = 0 ; $i < strlen($nuevaCadena); $i++){
+
+        if($nuevaCadena[$i] == 'a'){
+
+            $contador++;
+        }
+        
+    }
+
+    echo "La letra a aparece:  ".$contador." veces";
+
+}
+
+
+contarA($cadena2);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
