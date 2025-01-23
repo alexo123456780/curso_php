@@ -115,7 +115,7 @@ echo "La suma de los numeros es: $suma";*/
 
 
 
-$valores = [100,50,100,300,50,300,500,100];
+/*$valores = [100,50,100,300,50,300,500,100];
 
 
 $mayorNumero = function($valores){
@@ -158,7 +158,69 @@ $mayorNumero = function($valores){
 };
 
 
-$mayorNumero($valores);
+$mayorNumero($valores);*/
+
+
+/*$calcularFactorial = function($valor){
+
+    $contador = 1;
+
+    try{
+
+        if($valor < 0){
+
+            throw new Exception("No se aceptan numeros negativos en factoriales,revise sus datos nuevamente");
+        }
+
+        if(!is_numeric($valor)){
+
+            throw new Exception("Solo se aceptan datos numericos");
+        }
+
+
+    }catch(Exception $e){
+
+        echo "ERROR: ".$e -> getMessage();
+        return;
+
+    }
+
+    if($valor == 0){
+
+        echo "El factorial de $valor es 1";
+        return;
+    }
+
+    for($i = 1; $i <= $valor ; $i++){
+
+        $contador *= $i;
+
+    }
+
+    echo "El factorial de $valor es:  ".$contador;
+
+};
+
+
+$calcularFactorial(10);*/
+
+
+$numeros = [5,10,15,20,25,30];
+
+
+$calcularPromedio = fn($numeros) => array_reduce($numeros, fn($a,$b) => $a + $b , 0) / count($numeros);
+
+echo "El promedio del array es de:  ".$calcularPromedio($numeros);
+
+
+
+
+
+
+
+
+
+
 
 
 
