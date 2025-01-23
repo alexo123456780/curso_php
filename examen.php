@@ -99,7 +99,7 @@ for($i = 1 ; $i <= 10 ; $i++){
 }*/
 
 
-$contador = 1;
+/*$contador = 1;
 
 $suma = 0;
 
@@ -111,8 +111,54 @@ while($contador <=50){
 
 }
 
-echo "La suma de los numeros es: $suma";
+echo "La suma de los numeros es: $suma";*/
 
+
+
+$valores = [100,50,100,300,50,300,500,100];
+
+
+$mayorNumero = function($valores){
+
+    $numeroMayor = $valores[0];
+
+    if($valores[0] == 0){
+
+        echo "Error: No se aceptan 0 en el array";
+        return;
+    }
+
+   
+    for($i = 1 ; $i < count($valores); $i++){
+
+        try{
+
+            if($valores[$i] == 0){
+    
+                throw new Exception("El valor 0 no puede ser aceptado en el array");
+            }
+    
+        }catch(Exception $e){
+    
+            echo "Error: ". $e -> getMessage();
+            return;
+    
+        }
+
+        if($valores[$i] > $numeroMayor){
+
+            $numeroMayor = $valores[$i];
+
+        }
+
+    }
+
+    echo "El numero mayor es:  ".$numeroMayor;
+
+};
+
+
+$mayorNumero($valores);
 
 
 
