@@ -59,6 +59,8 @@ function incrementarPrecios($productos){
 
     },$productos);
 
+    echo "Array Actualizado:";
+    echo "<br><br>";
 
     foreach($incremento as $key => $valor){
 
@@ -69,15 +71,46 @@ function incrementarPrecios($productos){
 }
 
 
+function filtrarStok($productos){
+
+    $filtrado = array_filter($productos,function($value){
+
+        if($value["stok"] > 5){
+
+            return $value;
+
+        }
+    });
+
+    echo "Array Actualizado:";
+    echo "<br><br>";
+
+
+    foreach($filtrado as $candado => $indicador){
+
+        echo "Nombre: ".$indicador["nombre"]."     Precio:  ".$indicador["precio"]."     Stok:  ".$indicador["stok"]. "<br><br>";
+
+    }
+
+}
+
+
+function sumarStok($productos){
+
+    return array_reduce($productos,fn($a,$b) => $a + $b["stok"],0);
+
+}
+
 incrementarPrecios($productos);
 
+echo "<br><br>";
+
+filtrarStok($productos);
+
+echo "<br><br>";
 
 
-
-
-
-
-
+echo "Hay en el stok la cantidad de:  ".sumarStok($productos)." productos";
 
 
 
