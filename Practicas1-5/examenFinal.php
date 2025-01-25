@@ -38,11 +38,32 @@ function mostrarProductos($papeleria){
 };
 
 
+function actualizarStok(&$papeleria,$nombreProducto, $newStok){
 
-agregarProductos($papeleria,"cable usb" , 200, 5);
-agregarProductos($papeleria,"auriculares", 50, 3);
 
- mostrarProductos($papeleria);
+    $nombreValidado = strtolower($nombreProducto);
+
+
+    foreach($papeleria as &$clave){
+
+        if($clave["nombre"] == $nombreValidado){
+
+            $clave["stok"] = $newStok;
+
+        }
+    }
+
+}
+
+
+mostrarProductos($papeleria);
+
+actualizarStok($papeleria,"borrador" , 500);
+
+mostrarProductos($papeleria);
+
+
+
 
 
 
