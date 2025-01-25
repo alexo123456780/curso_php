@@ -56,11 +56,28 @@ function actualizarStok(&$papeleria,$nombreProducto, $newStok){
 }
 
 
-mostrarProductos($papeleria);
+function eliminarProducto($papeleria,...$nombreProducto){
 
-actualizarStok($papeleria,"borrador" , 500);
 
-mostrarProductos($papeleria);
+    $nombreValidado = strtolower(...$nombreProducto);
+
+    $arrayNuevo = array_filter($papeleria,fn($value) => $value["nombre"] != $nombreValidado);
+
+
+    foreach($arrayNuevo as $clave){
+
+        echo "Nombre: ". $clave["nombre"]."/"."Precio:  ".$clave["precio"]."/"."Stok:  ".$clave["stok"]."<br><br>";
+
+    }
+
+}
+
+
+eliminarProducto($papeleria,"lapiz","borrador");
+
+
+
+
 
 
 
