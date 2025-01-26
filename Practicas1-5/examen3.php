@@ -114,4 +114,9 @@ echo "Hay en el stok la cantidad de:  ".sumarStok($productos)." productos";
 
 
 
+
+
+
+
+
 ?>

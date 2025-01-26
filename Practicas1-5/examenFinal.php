@@ -34,7 +34,7 @@ function agregarProductos(&$papeleria,$nombre,$precio,$stok){
 
 
 // funcion para mostrar los productos
-function mostrarProductos($papeleria){
+function mostrarProductos(&$papeleria){
 
     foreach($papeleria as $value){
 
@@ -55,7 +55,7 @@ function actualizarStok(&$papeleria,$nombreProducto, $newStok){
 
     try{
 
-        if($indiceArray == false){
+        if($indiceArray === false){
 
             throw new Exception("No se encuentra el producto en el inventario");
             
@@ -85,19 +85,19 @@ function eliminarProducto(&$papeleria,$nombreProducto,){
 
     try{
 
-        if($productoIndice == false){
+        if($productoIndice === false){
 
             throw new Exception("No se encontro el producto en el invemtario");
 
         }
 
         
-        $borrarProducto = array_filter($papeleria,fn($value) => $value["nombre"] != $productoValidado);
+        $papeleria = array_filter($papeleria,fn($value) => $value["nombre"] != $productoValidado); // aca reasigno un valor.
 
         echo "Producto borrado exitosamente";
         echo "<br><br>";
 
-        foreach($borrarProducto as $clave){
+        foreach($papeleria as $clave){
 
             echo "Nombre: ".$clave["nombre"]."/"."Precio:  ".$clave["precio"]."/"."Stok:  ".$clave["stok"]."<br><br>";
 
@@ -147,6 +147,73 @@ function mostrarmasCaro(&$papeleria){
     }
 
 }
+
+
+function sumarStok(&$papeleria){
+
+    $sumarProductos = array_reduce($papeleria,fn($a,$b) => $a + $b["stok"],0);
+
+    echo "El total de productos en stok es de: $sumarProductos";
+
+}
+
+
+function actualizar($opcion,&$papeleria){ //me faltaba el array por referencia y lo agregue &
+
+$opcionRevisada = strtolower($opcion);
+
+
+switch($opcionRevisada){
+
+    case "agregar":
+    agregarProductos($papeleria,"celular",15000,2);
+    break;
+    
+    case "ver":
+    mostrarProductos($papeleria);
+    break;
+    
+    case "actualizar":
+    actualizarStok($papeleria,"borrador",9);
+    break;
+    
+    case "eliminar":
+    eliminarProducto($papeleria,"borrador");
+    break;
+    
+    case "caro":
+    mostrarmasCaro($papeleria);
+    break;
+    
+    case "total":
+    sumarStok($papeleria);
+    break;
+    
+    default:
+    echo "Opcion no valida";
+    break;
+
+}
+
+}
+
+
+actualizar("ver",$papeleria);
+actualizar("agregar",$papeleria);
+
+actualizar("total",$papeleria);
+
+echo "<br><br>";
+
+actualizar("caro",$papeleria);
+
+
+
+
+
+
+
+
 
 
 
