@@ -13,3 +13,9 @@ filter_var($valor, FILTER_VALIDATE_INT): Validar número entero.
 Funciones útiles para sanitización:
 filter_var($valor, FILTER_SANITIZE_STRING): Eliminar etiquetas HTML y caracteres peligrosos.
 filter_var($valor, FILTER_SANITIZE_EMAIL): Limpiar un email.
+
+
+
+--Para dar permisos en un formulario de html php y se puede acceder alos archivos se coloca lo siguiente
+
+enctype = "multipart/form-data"
