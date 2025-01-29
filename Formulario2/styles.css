@@ -1,0 +1,38 @@
+h3{
+
+    text-align: center;
+    margin-top: 45px;
+    align-items: center;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: azure;
+    align-items: center;
+    font-family: cursive;
+    font-size: 10;
+    
+
+}
+
+#formulario{
+
+    margin-top: 45px;
+    margin: 55px;
+    padding: 0 45px;
+
+
+
+
+
+
+    
+
+
+
+
+
+}

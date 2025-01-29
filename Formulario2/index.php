@@ -4,23 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practicas-Formulario-YT</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <h3><strong>Formulario de Contacto</strong></h3>
 
 
-<div class="imagen-oshi">
-
-<img src="Images/Images1318427.jpeg" alt="oshi_noko">
-
-</div>
-
 
 <!--  Se agrega multipart/form-data para aque acceda el form alos archivos   -->
 
-<form action="server.php" method="post" enctype="multipart/form-data">
+<form action="server.php" method="post" id="formulario" enctype="multipart/form-data">
 
     <label>
     Nombre:
