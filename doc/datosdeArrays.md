@@ -39,3 +39,7 @@ var_dump($indice); // Resultado: bool(false)
 
 
 // Dato: usa la funcion max para buscar en caso de un array multidimensional 
+
+
+
+in_array es una función utilizada en varios lenguajes de programación (principalmente en PHP) para verificar si un valor específico existe dentro de un arreglo.
