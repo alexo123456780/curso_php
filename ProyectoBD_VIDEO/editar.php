@@ -24,6 +24,7 @@ $consulta->execute();
 $alumno = $consulta->fetch(PDO::FETCH_OBJ);
 
 
+
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     
     $id = $_GET["id"];
