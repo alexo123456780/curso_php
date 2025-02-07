@@ -1,24 +1,11 @@
-<?php
-session_start();
-
-if(isset($_SESSION["usuario"])){
-    header("Location: perfil.php");
-    exit();
-}
-
-if(isset($_COOKIE["usuario"])){
-    $_SESSION["usuario"] = $_COOKIE["usuario"];
-    header("Location: perfil.php");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
-    <link rel="stylesheet" href="hola.css">
+    <link rel="stylesheet" href="hola11.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -63,3 +50,4 @@ if(isset($_COOKIE["usuario"])){
     </div>
 </body>
 </html>
+

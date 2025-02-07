@@ -1,5 +1,8 @@
 <?php
 
+
+//Validacion del registro del usuario
+
 require  "conexion1.php";
 
 if($_SERVER["REQUEST_METHOD"]=== "POST"){
@@ -7,6 +10,7 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
     $nombre = $_POST["nombre"];
     $correo = $_POST["correo"];
     $password = $_POST["password"];
+
 
 
     if(isset($_FILES["foto"])){
@@ -20,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
 
     
     //solucione el problema de que no se subia en la carpeta requerida con \\ al final del directorio    
-    $directorio = "C:\\xampp\\htdocs\\curso_php\\uploads\\";
+    $directorio = "C:\\xampp\\htdocs\\curso_php\\SEMANA2FINAL\\uploads\\";
 
     $rutaCompleta = $directorio .$nombreNuevo;
 
@@ -56,13 +60,13 @@ if($_SERVER["REQUEST_METHOD"]=== "POST"){
     $insertarDatos->bindParam(":nombre",$nombre);
     $insertarDatos->bindParam(":correo",$correo);
     $insertarDatos->bindParam(":password",$passwordSeguro);
-    $insertarDatos->bindParam(":foto_perfil",$rutaCompleta);
+    $insertarDatos->bindParam(":foto_perfil",$nombreNuevo);
 
 
 
     if($insertarDatos->execute()){
 
-        header("Location: registro.php?=succes_usuario_registrado");
+        header("Location: login.php?=succes_usuario_registrado");
         exit();
     }else{
 
