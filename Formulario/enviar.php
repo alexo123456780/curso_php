@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 //Ejemplo 2 validacion y zanitacion
 
-if($_SERVER["REQUEST_METHOD"] === "POST"){
+if($_SERVER["REQUEST_METHOD"] === "POST"){ 
 
     $nombre = filter_var($_POST["name"],FILTER_SANITIZE_STRING);
     $email = filter_var($_POST["email"],FILTER_SANITIZE_EMAIL);
@@ -39,6 +39,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 
 }
+
+
 
 
 
