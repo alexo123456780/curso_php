@@ -12,9 +12,6 @@
 <h1>Subir Imagenes</h1>
 </header>
 
-
-
-
 <form action="server.php" method="post" enctype="multipart/form-data">
 
 <fieldset>
